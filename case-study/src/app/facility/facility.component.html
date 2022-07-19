@@ -1,0 +1,40 @@
+<div class="container">
+
+<div class="mt-5 table-responsive" style="margin-bottom: 200px">
+<table class="table">
+  <thead class="thead-dark ">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Dịch vụ</th>
+    <th scope="col">Diện tích</th>
+    <th scope="col">Giá thuê</th>
+    <th scope="col">Số người</th>
+    <th scope="col">Kiểu thuê</th>
+    <th scope="col">Kiểu phòng</th>
+    <th scope="col">Dịch vụ khác</th>
+    <th scope="col">Hồ bơi</th>
+    <th scope="col">Số tầng</th>
+    <th scope="col">Dịch vụ miễn phí đi kèm</th>
+    <th colspan="2" scope="col">Action</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor=" let temp of facilities;let i = index">
+    <td>{{i+1}}</td>
+    <td>{{temp.nameFacility}}</td>
+    <td>{{temp.areaFacility}}</td>
+    <td>{{temp.costFacility}}</td>
+    <td>{{temp.peopleFacility}}</td>
+    <td>{{temp.typeFacility}}</td>
+    <td>{{temp.roomStandard}}</td>
+    <td>{{temp.other}}</td>
+    <td>{{temp.areaPool}}</td>
+    <td>{{temp.floor}}</td>
+    <td>{{temp.freeAttachService}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<app-creat-facility (eventEmitter)="received($event)"></app-creat-facility>

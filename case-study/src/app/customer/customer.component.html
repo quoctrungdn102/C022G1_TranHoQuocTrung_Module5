@@ -1,0 +1,36 @@
+<div class="container">
+
+<table class="table mt-5 table-repository" style="margin-bottom: 300px">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Tên</th>
+    <th scope="col">Ngày sinh</th>
+    <th scope="col">Giới tính</th>
+    <th scope="col">CMND</th>
+    <th scope="col">SĐT</th>
+    <th scope="col">Email</th>
+    <th scope="col">Loại khách</th>
+    <th scope="col">Địa chỉ</th>
+    <th colspan="2" scope="col">Action</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let tem of customers; let i =index">
+    <td>{{i+1}}</td>
+    <td>{{tem.nameCustomer}}</td>
+    <td>{{tem.dateCustomer}}</td>
+    <td>{{tem.genderCustomer==true?'nam':'nữ'}}</td>
+    <td>{{tem.cardCustomer}}</td>
+    <td>{{tem.telephoneNumber}}</td>
+    <td>{{tem.emailCustomer}}</td>
+    <td>{{tem.typeCustomer}}</td>
+    <td>{{tem.addressCustomer}}</td>
+    <td></td>
+
+  </tr>
+  </tbody>
+</table>
+</div>
+

@@ -1,0 +1,103 @@
+<div class="container mt-5">
+  <form #createFacility= "ngForm"
+  (ngSubmit)="onSubmit(createFacility)" >
+    <div class="form-group ">
+      <label for="inputState">Loại dịch vụ</label>
+      <select
+        ngModel
+        name="typeFacility"
+        id="inputState" class="form-control">
+        <option>Vila</option>
+        <option>House</option>
+        <option>Room</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputEmail4">Tên dịch vụ</label>
+        <input
+          ngModel
+          name="nameFacility"
+          type="text" class="form-control" id="inputEmail4" placeholder="Email">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputPassword5">Diện tích sử dụng</label>
+        <input
+          ngModel
+          name="areaFacility"
+          type="text" class="form-control" id="inputPassword5" placeholder="Password">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Chi phí thuê</label>
+        <input
+          ngModel
+          name="costFacility"
+          type="text" class="form-control" id="inputPassword4" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="inputAddress">Số người tối đa</label>
+        <input
+          ngModel
+          name="peopleFacility"
+          type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+      </div>
+<!--      <div class="form-group col-md-3">-->
+<!--        <label for="inputAddress2">Kiểu thuê</label>-->
+<!--        <input-->
+<!--          ngModel-->
+<!--          name="areaFacility"-->
+<!--          type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">-->
+<!--      </div>-->
+      <div class="form-group col-md-3">
+        <label for="inputAddress22">Tiêu chuẩn phòng</label>
+        <input
+          ngModel
+          name="roomStandard"
+          type="text" class="form-control" id="inputAddress22">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputAddress222">Diện tích hồ bơi</label>
+        <input
+          ngModel
+          name="areaPool"
+          type="text" class="form-control" id="inputAddress222">
+      </div>
+
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">Mô tả tiện nghi khác</label>
+        <input
+          ngModel
+          name="other"
+          type="text" class="form-control" id="inputCity">
+      </div>
+
+      <div class="form-group col-md-2">
+        <label for="inputZip">Số tầng </label>
+        <input
+          ngModel
+          name="floor"
+          type="text" class="form-control" id="inputZip">
+      </div>
+    </div>
+    <div class="form-group ">
+      <label for="free">Dịch vụ miễn phí đính kèm </label>
+      <input
+        ngModel
+        name="freeAttachService"
+        type="text" class="form-control" id="free">
+    </div>
+
+    <button style="float: left" type="submit" class="btn btn-primary mr-4">Save</button>
+  </form>
+
+<!--  <a href="service.html">-->
+<!--    <button class="btn btn-primary">Close</button>-->
+<!--  </a>-->
+
+
+</div>
