@@ -16,6 +16,7 @@ export class CreatFacilityComponent implements OnInit {
   }
 
   contractForm = new FormGroup({
+    idFacility: new FormControl(),
     nameFacility: new FormControl("Hung"),
     areaFacility: new FormControl(100),
     costFacility: new FormControl(200),
@@ -31,8 +32,23 @@ export class CreatFacilityComponent implements OnInit {
 
   onSubmit() {
     console.log(this.contractForm.value);
+    const facility1 =    {
+      idFacility: 16,
+      nameFacility: "vila1",
+      areaFacility: 1,
+      costFacility: 2000,
+      peopleFacility: 5,
+      typeFacility: 'vip',
+      roomStandard: 'hướng ra biển',
+      other: 'không',
+      areaPool: 20,
+      floor: 3,
+      freeAttachService: 'không'
+    }
 
-    this._facilityService.createFacility(this.contractForm.value);
+    this._facilityService.createFacility(this.contractForm.value).subscribe(data =>{
+      console.log(data)
+    });
     this.contractForm.reset();
   }
 

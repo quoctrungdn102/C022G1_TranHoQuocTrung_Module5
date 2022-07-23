@@ -5,15 +5,18 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeadComponent} from './head/head.component';
 import {FoterComponent} from './foter/foter.component';
-import {FacilityComponent} from './facility/facility.component';
-import {CustomerComponent} from './customer/customer.component';
-import {CreatFacilityComponent} from './creat-facility/creat-facility.component';
-import {EditFacilityComponent} from './edit-facility/edit-facility.component';
+import {FacilityComponent} from './facility/facility-list/facility.component';
+import {CustomerComponent} from './customer/customer-list/customer.component';
+import {CreatFacilityComponent} from './facility/creat-facility/creat-facility.component';
+import {EditFacilityComponent} from './facility/edit-facility/edit-facility.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HomeFurumaComponent} from "./home-furuma/home-furuma.component";
-import {FacilityService} from "./service/facility.service";
-import { CreateCustomerComponent } from './create-customer/create-customer.component';
-import { EditCustomerComponent } from './edit-customer/edit-customer.component';
+import { CreateCustomerComponent } from './customer/create-customer/create-customer.component';
+import { EditCustomerComponent } from './customer/edit-customer/edit-customer.component';
+import { ContractComponent } from './contract/contract-list/contract.component';
+import { CreateContractComponent } from './contract/create-contract/create-contract.component';
+import { DeleteFacilityComponent } from './facility/delete-facility/delete-facility.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { EditCustomerComponent } from './edit-customer/edit-customer.component';
     HomeFurumaComponent,
     CreateCustomerComponent,
     EditCustomerComponent,
+    ContractComponent,
+    CreateContractComponent,
+    DeleteFacilityComponent,
 
 
   ],
@@ -35,6 +41,7 @@ import { EditCustomerComponent } from './edit-customer/edit-customer.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

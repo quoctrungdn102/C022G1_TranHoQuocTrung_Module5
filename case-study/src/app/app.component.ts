@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Facility} from "./model/facility";
+import {Facility} from "./facility/model/facility";
 
 @Component({
   selector: 'app-root',

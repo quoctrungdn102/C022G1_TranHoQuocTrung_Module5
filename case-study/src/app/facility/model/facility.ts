@@ -1,4 +1,5 @@
 export interface Facility {
+  idFacility: number;
   nameFacility: String;
   areaFacility: number;
   costFacility: number;

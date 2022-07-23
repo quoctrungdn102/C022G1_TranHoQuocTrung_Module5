@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {FacilityComponent} from "./facility/facility.component";
 import {HomeFurumaComponent} from "./home-furuma/home-furuma.component";
-import {CustomerComponent} from "./customer/customer.component";
-import {CreatFacilityComponent} from "./creat-facility/creat-facility.component";
+import {CustomerComponent} from "./customer/customer-list/customer.component";
+import {CreatFacilityComponent} from "./facility/creat-facility/creat-facility.component";
+import {FacilityComponent} from "./facility/facility-list/facility.component";
 
 
 
