@@ -1,34 +1,5 @@
 {
-  "list-facility": [
-    {
-      "idFacility": "123123",
-      "nameFacility": "Hung",
-      "areaFacility": 100,
-      "costFacility": 200,
-      "peopleFacility": 10,
-      "typeFacility": "House",
-      "roomStandard": "VIP",
-      "other": "Ha Noi",
-      "areaPool": 50,
-      "floor": 10,
-      "freeAttachService": "Cafe",
-      "id": 1
-    },
-    {
-      "idFacility": "322132168513",
-      "nameFacility": "Hung",
-      "areaFacility": 100,
-      "costFacility": 200,
-      "peopleFacility": 10,
-      "typeFacility": "House",
-      "roomStandard": "VIP",
-      "other": "Ha Noi",
-      "areaPool": 50,
-      "floor": 10,
-      "freeAttachService": "Cafe",
-      "id": 2
-    }
-  ],
+  "list-facility": [],
   "comments": [
     {
       "id": 1,

@@ -1,3 +1,6 @@
+<div class="container mt-5 " style="margin-bottom: 300px">
+
+
 <table class="table">
   <thead class="thead-dark">
   <tr>
@@ -12,44 +15,18 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>HD-123</td>
-    <td>21/10/2022</td>
-    <td>22/10/2022</td>
-    <td>500.0000</td>
-    <td>3.000.000</td>
-
+  <tr *ngFor="let contract of contracts; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{contract.idContract}}</td>
+    <td>{{contract.starDay}}</td>
+    <td>{{contract.endDay}}</td>
+    <td>{{contract.deposits}}</td>
+    <td>{{contract.moneyTotal}}</td>
   </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>HD-163</td>
-    <td>21/10/2022</td>
-    <td>22/10/2022</td>
-    <td>1.000.0000</td>
-    <td>15.000.000</td>
 
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>HD-183</td>
-    <td>21/10/2022</td>
-    <td>22/10/2022</td>
-    <td>500.0000</td>
-    <td>10.000.000</td>
-
-  </tr>
-  <tr>
-    <th scope="row">4</th>
-    <td>HD-431</td>
-    <td>21/10/2022</td>
-    <td>29/10/2022</td>
-    <td>500.0000</td>
-    <td>4.000.000</td>
-
-  </tr>
 
 
 
   </tbody>
 </table>
+</div>
