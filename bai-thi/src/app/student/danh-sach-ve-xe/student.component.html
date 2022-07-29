@@ -1,0 +1,79 @@
+<div class="container">
+  <h2>Danh sách vé xe</h2>
+  <div style="display: flex">
+    <div style="display: flex; margin-right: 50px">
+      <h4>Tìm kiếm điểm đến : </h4>
+      <div class="ml-2"><input type="text" (keydown.enter)="diemDen($event.target.value)"></div>
+    </div>
+    <div style="display: flex">
+      <h4>Tìm kiếm điểm đi : </h4>
+      <div class="ml-2"><input type="text" (keydown.enter)="diemDi($event.target.value)"></div>
+    </div>
+  </div>
+
+
+  <div class="mt-5 table-responsive" style="margin-bottom: 200px">
+    <div class="mb-2"><a routerLink="/themVe">
+      <button>Thêm Vé</button>
+    </a></div>
+    <table class="table">
+      <thead class="thead-dark ">
+      <tr>
+        <th scope="col">Điểm Đi</th>
+        <th scope="col">Điểm Đến</th>
+        <th scope="col">Ngày Khởi Hành</th>
+        <th scope="col">Giờ Khởi Hành</th>
+        <th scope="col">Nhà Xe</th>
+        <th scope="col">Số Lượng</th>
+        <th colspan="2" scope="col">Action</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor=" let temp of listStudent;let i = index">
+        <td>{{temp.diemDi}}</td>
+        <td>{{temp.diemDen}}</td>
+        <td>{{temp.ngayKhoiHanh}}</td>
+        <td>{{temp.gioKhoiHanh}}</td>
+        <td>{{temp.nhaXe.tenNhaXe}}</td>
+        <td>{{temp.soLuong}}</td>
+        <td>
+          <button type="button" data-toggle="modal" data-target="#exampleModal"
+                  (click)="getId(temp.id,temp.diemDi,temp.diemDen,temp.gioKhoiHanh,temp.ngayKhoiHanh)">
+            Đặt vé
+          </button>
+        </td>
+        <td *ngIf="get"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="display: none">{{id}}</p>
+        <p>Bạn có muốn đặt vé từ {{tenDiemDi}} đến {{tenDiemDen}} vào {{gio}} ngày {{ngay}}  không !</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="datVe(id)">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

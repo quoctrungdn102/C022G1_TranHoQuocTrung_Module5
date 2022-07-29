@@ -1,0 +1,39 @@
+
+<div style="text-align: center">
+  <h3>Search product </h3>
+  <form >
+    <input name="search" type="text">
+    <input type="submit" value="Search">
+  </form>
+</div>
+
+<div class="container">
+  <a>
+    <button>Creat Product</button>
+  </a>
+  <table class="table table-hover">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Stt</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Description</th>
+      <th scope="col">Producer</th>
+      <th scope="col">Category</th>
+      <th colspan="3" scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let temp of listProduct; let i = index" >
+      <td>{{i+1}}</td>
+      <td>{{temp.nameProduct}}</td>
+      <td>{{temp.price}}</td>
+      <td>{{temp.description}}</td>
+      <td>{{temp.producer}}</td>
+      <td>{{temp.category.nameCategory}}</td>
+
+
+    </tr>
+    </tbody>
+  </table>
+</div>
