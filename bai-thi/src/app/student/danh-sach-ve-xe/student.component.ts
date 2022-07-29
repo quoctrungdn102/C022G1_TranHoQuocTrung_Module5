@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {StudentService} from '../service/student.service';
+import {VeXEService} from '../service/veXE.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {VeXe} from '../model/ve-xe';
@@ -16,15 +16,16 @@ export class StudentComponent implements OnInit {
   ngay: string;
   gio: string;
 
-  constructor(private studentService: StudentService, private router: Router, private toast: ToastrService) {
+  constructor(private studentService: VeXEService, private router: Router, private toast: ToastrService) {
   }
 
-  listStudent: any;
+  danhSachVeXe: any;
   veXe: VeXe;
 
   ngOnInit(): void {
     this.studentService.getAllStudent().subscribe(data => {
-      this.listStudent = data;
+      this.danhSachVeXe = data;
+      console.log(data);
     });
   }
 
@@ -43,13 +44,13 @@ export class StudentComponent implements OnInit {
 
   diemDen(value: any) {
     this.studentService.tiemKiemDiemDen(value).subscribe(data => {
-      this.listStudent = data;
+      this.danhSachVeXe = data;
     });
   }
 
   diemDi(value: any) {
     this.studentService.tiemKiemDiemDi(value).subscribe(data => {
-      this.listStudent = data;
+      this.danhSachVeXe = data;
     });
   }
 

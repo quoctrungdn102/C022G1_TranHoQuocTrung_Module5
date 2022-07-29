@@ -30,7 +30,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor=" let temp of listStudent;let i = index">
+      <tr *ngFor=" let temp of danhSachVeXe;let i = index">
         <td>{{temp.diemDi}}</td>
         <td>{{temp.diemDen}}</td>
         <td>{{temp.ngayKhoiHanh}}</td>
@@ -43,7 +43,6 @@
             Đặt vé
           </button>
         </td>
-        <td *ngIf="get"></td>
       </tr>
       </tbody>
     </table>

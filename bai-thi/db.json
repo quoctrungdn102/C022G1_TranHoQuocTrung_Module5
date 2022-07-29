@@ -1,0 +1,72 @@
+{
+  "veXE": [
+    {
+      "id": 1,
+      "giaVe": 20000,
+      "diemDi": "Da Nang",
+      "diemDen": "Hue",
+      "ngayKhoiHanh": "2020-11-11",
+      "gioKhoiHanh": "20:00",
+      "nhaXe": {
+        "id": 1,
+        "maNhaXe": "NX-123",
+        "tenNhaXe": "Phuong Trang"
+      },
+      "soLuong": 1
+    },
+    {
+      "id": 2,
+      "giaVe": 1,
+      "diemDi": "hn",
+      "diemDen": "hcm",
+      "ngayKhoiHanh": "2022-07-07",
+      "gioKhoiHanh": "12",
+      "nhaXe": {
+        "id": 1,
+        "maNhaXe": "NX-123",
+        "tenNhaXe": "Phuong Trang"
+      },
+      "soLuong": 9
+    },
+    {
+      "id": 3,
+      "giaVe": 123,
+      "diemDi": "132",
+      "diemDen": "123",
+      "ngayKhoiHanh": "2022-07-10",
+      "gioKhoiHanh": "123",
+      "nhaXe": {
+        "id": 2,
+        "maNhaXe": "NX-124",
+        "tenNhaXe": "Trung Nguyen"
+      },
+      "soLuong": 113
+    },
+    {
+      "id": 4,
+      "giaVe": 123123,
+      "diemDi": "qư21321",
+      "diemDen": "12321",
+      "ngayKhoiHanh": "2022-07-29",
+      "gioKhoiHanh": "20:00",
+      "nhaXe": {
+        "id": 2,
+        "maNhaXe": "NX-124",
+        "tenNhaXe": "Trung Nguyen"
+      },
+      "soLuong": 122
+    }
+  ],
+  "nhaXe": [
+    {
+      "id": 1,
+      "maNhaXe": "NX-123",
+      "tenNhaXe": "Phuong Trang"
+    },
+    {
+      "id": 2,
+      "maNhaXe": "NX-124",
+      "tenNhaXe": "Trung Nguyen"
+    }
+  ]
+}

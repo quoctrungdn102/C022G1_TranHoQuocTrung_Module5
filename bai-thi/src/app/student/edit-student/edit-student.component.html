@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <h2>Thêm mới học sinh</h2>
+
+  <form [formGroup]="formCreateStudent" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="form-group col-md-8">
+        <label for="inputEmail41">Tên Học Sinh</label>
+        <input
+          formControlName="nameStudent"
+          type="text" class="form-control" id="inputEmail41" placeholder="Trần Văn A">
+        <!--        <div class="text-danger" *ngIf="contractForm.controls.idFacility.hasError('required')">* Không đưuọc để trống</div>-->
+      </div>
+      <div class="form-group col-md-4 " formGroupName="class">
+        <label for="inputState">Lớp</label>
+        <select
+          formControlName="id"
+
+          id="inputState" class="form-control">
+          <option value="">--Chon lớp--</option>
+          <option  *ngFor="let temp of listClass" value="{{temp.id}}">{{temp.nameClass}}</option>
+        </select>
+      </div>
+    </div>
+
+
+
+    <button  style="float: left" type="submit" class="btn btn-primary mr-4">Save</button>
+    <!--    <button [disabled]="contractForm.invalid" style="float: left" type="submit" class="btn btn-primary mr-4">Save</button>-->
+  </form>
+
+
+
+
+</div>
+
