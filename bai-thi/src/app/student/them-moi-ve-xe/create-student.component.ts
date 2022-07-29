@@ -53,6 +53,7 @@ export class CreateStudentComponent implements OnInit {
 
   onSubmit() {
     this.studentService.createStudent(this.themVeXe.value).subscribe(value => {
+      console.log(this.themVeXe.value);
       alert('thêm thành công ');
       this.router.navigateByUrl('/home');
     });

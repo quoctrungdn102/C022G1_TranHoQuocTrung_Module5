@@ -1,14 +1,15 @@
 <div class="container">
   <h2>Danh sách vé xe</h2>
-  <div style="display: flex">
+  <div style="display: flex" [formGroup]="formSearch">
     <div style="display: flex; margin-right: 50px">
       <h4>Tìm kiếm điểm đến : </h4>
-      <div class="ml-2"><input type="text" (keydown.enter)="diemDen($event.target.value)"></div>
+      <div class="ml-2"><input formControlName="diemDen" type="text" (keydown.enter)="diemDen($event.target.value)"></div>
     </div>
     <div style="display: flex">
       <h4>Tìm kiếm điểm đi : </h4>
-      <div class="ml-2"><input type="text" (keydown.enter)="diemDi($event.target.value)"></div>
+      <div class="ml-2"><input formControlName="diemDi" type="text" (keydown.enter)="diemDi($event.target.value)"></div>
     </div>
+    <button (click)="search()">Search</button>
   </div>
 
 

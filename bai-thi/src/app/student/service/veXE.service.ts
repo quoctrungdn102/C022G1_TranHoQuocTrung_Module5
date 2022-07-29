@@ -42,5 +42,8 @@ export class VeXEService {
   tiemKiemDiemDen(name: string): Observable<VeXe> {
     return this.http.get<VeXe>('http://localhost:3000/veXE?diemDen_like=' + name);
   }
+  Search(diemDen: string, diemDi: string): Observable<VeXe> {
+    return this.http.get<VeXe>('http://localhost:8080/restControllerProduct/search/' + diemDen + '&' + diemDi);
+  }
 
 }

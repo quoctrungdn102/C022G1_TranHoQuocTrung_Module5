@@ -27,15 +27,14 @@
         <label for="inputState">Nhà xe</label>
         <select
           formControlName="id"
-
           id="inputState" class="form-control">
           <option value="" selected>--Chon nhà xe--</option>
           <option *ngFor="let temp of listClass " value="{{temp.id}}">{{temp.tenNhaXe}}</option>
         </select>
-<!--        <div class="text-danger"-->
-<!--             *ngIf="themVeXe.controls.nhaXe.controls.id.hasError('required') && themVeXe.controls.nhaXe.controls.id.touched">-->
-<!--          Không được để trống-->
-<!--        </div>-->
+        <div class="text-danger"
+             *ngIf="themVeXe.get('nhaXe').get('id').hasError('required') && themVeXe.get('nhaXe').get('id').touched">
+          Không được để trống
+        </div>
       </div>
     </div>
     <div class="form-row">

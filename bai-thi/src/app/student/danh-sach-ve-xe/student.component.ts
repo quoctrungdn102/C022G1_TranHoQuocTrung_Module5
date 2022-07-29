@@ -3,6 +3,7 @@ import {VeXEService} from '../service/veXE.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {VeXe} from '../model/ve-xe';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-student',
@@ -18,6 +19,11 @@ export class StudentComponent implements OnInit {
 
   constructor(private studentService: VeXEService, private router: Router, private toast: ToastrService) {
   }
+
+  formSearch: FormGroup = new FormGroup({
+    diemDen: new FormControl(''),
+    diemDi: new FormControl('')
+  });
 
   danhSachVeXe: any;
   veXe: VeXe;
@@ -55,13 +61,20 @@ export class StudentComponent implements OnInit {
   }
 
   datVe(id: number) {
-    this.studentService.tiemKiemVeXe(id).subscribe(data => {
-      this.veXe = data;
-      const soLuong1 = this.veXe.soLuong - 1;
-      this.veXe.soLuong = soLuong1;
-      console.log(this.veXe);
-      this.studentService.suaVeXe(id, this.veXe).subscribe();
-      this.ngOnInit();
+    // this.studentService.tiemKiemVeXe(id).subscribe(data => {
+    //   this.veXe = data;
+    //   const soLuong1 = this.veXe.soLuong - 1;
+    //   this.veXe.soLuong = soLuong1;
+    //   console.log(this.veXe);
+    //   this.studentService.suaVeXe(id, this.veXe).subscribe();
+    //   this.ngOnInit();
+    // });
+  }
+
+  search() {
+    const value = this.formSearch.value;
+    this.studentService.Search(value.diemDen, value.diemDi).subscribe(data => {
+      this.danhSachVeXe = data;
     });
   }
 }

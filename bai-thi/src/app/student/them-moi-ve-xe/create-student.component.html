@@ -9,7 +9,7 @@
           formControlName="diemDi"
           type="text" class="form-control" id="inputEmail41" >
         <div class="text-danger"
-             *ngIf="themVeXe.controls.diemDi.hasError('required') && themVeXe.controls.diemDi.touched">
+             *ngIf="themVeXe.get('nhaXe').get('id').hasError('required') && themVeXe.get('nhaXe').get('id').touched">
           Không được để trống
         </div>
       </div>
