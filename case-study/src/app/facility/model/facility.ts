@@ -4,7 +4,10 @@ export interface Facility {
   areaFacility: number;
   costFacility: number;
   peopleFacility: number;
-  typeFacility: String;
+  typeFacility: {
+    id : number;
+    nameFacility: string;
+  }
   roomStandard: String;
   other:String;
   areaPool: number;

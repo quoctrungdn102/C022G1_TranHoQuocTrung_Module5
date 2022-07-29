@@ -1,5 +1,71 @@
 {
-  "list-facility": [],
+  "list-facility": [
+    {
+      "id": 1,
+      "idFacility": "DV-1212123",
+      "nameFacility": "Vila",
+      "areaFacility": 100,
+      "costFacility": 200,
+      "peopleFacility": 10,
+      "typeFacility": {
+        "id": 1,
+        "nameTypeFacility": "Vila"
+      },
+      "roomStandard": "VIP",
+      "other": "Ha Noi",
+      "areaPool": 50,
+      "floor": 10,
+      "freeAttachService": "Cafe"
+    },
+    {
+      "id": 2,
+      "idFacility": "DV-1212",
+      "nameFacility": "Vila 12",
+      "areaFacility": 100,
+      "costFacility": 200,
+      "peopleFacility": 10,
+      "typeFacility": {
+        "id": 1,
+        "nameTypeFacility": "Vila"
+      },
+      "roomStandard": "VIP",
+      "other": "Ha Noi",
+      "areaPool": 50,
+      "floor": 10,
+      "freeAttachService": "Cafe"
+    },
+    {
+      "id": 3,
+      "idFacility": "DV-1212",
+      "nameFacility": "Vila 13",
+      "areaFacility": 100,
+      "costFacility": 200,
+      "peopleFacility": 10,
+      "typeFacility": {
+        "id": 3,
+        "nameTypeFacility": "Room"
+      },
+      "roomStandard": "VIP",
+      "other": "Ha Noi",
+      "areaPool": 50,
+      "floor": 10,
+      "freeAttachService": "Cafe"
+    }
+  ],
+  "type-facility": [
+    {
+      "id": 1,
+      "nameTypeFacility": "Vila"
+    },
+    {
+      "id": 2,
+      "nameTypeFacility": "House"
+    },
+    {
+      "id": 3,
+      "nameTypeFacility": "Room"
+    }
+  ],
   "comments": [
     {
       "id": 1,

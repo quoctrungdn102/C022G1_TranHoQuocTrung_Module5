@@ -5,16 +5,15 @@
       <input
         formControlName="idFacility"
         type="text" class="form-control" id="inputEmail41" placeholder="Code">
+      <div class="text-danger" *ngIf="contractForm.controls.idFacility.hasError('required')">* Không đưuọc để trống </div>
     </div>
-    <div class="form-group ">
+    <div class="form-group " >
       <label for="inputState">Loại dịch vụ</label>
       <select
         formControlName="typeFacility"
 
         id="inputState" class="form-control">
-        <option>Vila</option>
-        <option>House</option>
-        <option>Room</option>
+        <option [ngValue]="temp" *ngFor="let temp of typeFacilities " >{{temp.nameTypeFacility}}</option>
       </select>
     </div>
     <div class="form-row">
@@ -23,12 +22,15 @@
         <input
           formControlName="nameFacility"
           type="text" class="form-control" id="inputEmail4" placeholder="Email">
+        <div class="text-danger" *ngIf="contractForm.controls.nameFacility.hasError('required')">* Không đưuọc để trống </div>
       </div>
+
       <div class="form-group col-md-4">
         <label for="inputPassword5">Diện tích sử dụng</label>
         <input
           formControlName="areaFacility"
           type="number" class="form-control" id="inputPassword5" placeholder="Password">
+        <div class="text-danger" *ngIf="contractForm.controls.areaFacility.hasError('required')">* Không đưuọc để trống </div>
       </div>
 
       <div class="form-group col-md-4">
@@ -36,6 +38,8 @@
         <input
           formControlName="costFacility"
           type="number" class="form-control" id="inputPassword4" placeholder="Password">
+        <div class="text-danger" *ngIf="contractForm.controls.costFacility.hasError('required')">* Không đưuọc để trống </div>
+
       </div>
     </div>
     <div class="form-row">
@@ -44,6 +48,8 @@
         <input
           formControlName="peopleFacility"
           type="number" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        <div class="text-danger" *ngIf="contractForm.controls.peopleFacility.hasError('required')">* Không đưuọc để trống </div>
+
       </div>
 <!--      <div class="form-group col-md-3">-->
 <!--        <label for="inputAddress2">Kiểu thuê</label>-->
@@ -57,6 +63,8 @@
         <input
           formControlName="roomStandard"
           type="text" class="form-control" id="inputAddress22">
+        <div class="text-danger" *ngIf="contractForm.controls.roomStandard.hasError('required')">* Không đưuọc để trống </div>
+
       </div>
       <div class="form-group col-md-3">
         <label for="inputAddress222">Diện tích hồ bơi</label>
@@ -64,6 +72,7 @@
           formControlName="areaPool"
 
           type="number" class="form-control" id="inputAddress222">
+        <div class="text-danger" *ngIf="contractForm.controls.areaPool.hasError('required')">* Không đưuọc để trống </div>
       </div>
 
     </div>
@@ -74,6 +83,8 @@
           formControlName="other"
 
           type="text" class="form-control" id="inputCity">
+        <div class="text-danger" *ngIf="contractForm.controls.other.hasError('required')">* Không đưuọc để trống </div>
+
       </div>
 
       <div class="form-group col-md-2">
@@ -82,17 +93,18 @@
           formControlName="floor"
 
           type="number" class="form-control" id="inputZip">
+        <div class="text-danger" *ngIf="contractForm.controls.floor.hasError('required')">* Không đưuọc để trống </div>
       </div>
     </div>
     <div class="form-group ">
       <label for="free">Dịch vụ miễn phí đính kèm </label>
       <input
         formControlName="freeAttachService"
-
         type="text" class="form-control" id="free">
+      <div class="text-danger" *ngIf="contractForm.controls.freeAttachService.hasError('required')">* Không đưuọc để trống </div>
     </div>
 
-    <button style="float: left" type="submit" class="btn btn-primary mr-4">Save</button>
+    <button [disabled]="contractForm.invalid" style="float: left" type="submit" class="btn btn-primary mr-4">Save</button>
   </form>
 
 <!--  <a href="service.html">-->

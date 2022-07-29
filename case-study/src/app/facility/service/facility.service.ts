@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Facility} from "../model/facility";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {TypeFacility} from "../model/type-facility";
 
 
 
@@ -34,5 +35,8 @@ export class FacilityService {
 
   deleteFacility(id:number)  : Observable<Facility> {
     return this.http.delete<Facility>('http://localhost:3000/list-facility/'+id);
+  }
+  getTypeFacilityAll(): Observable<TypeFacility>{
+     return this.http.get<TypeFacility>('http://localhost:3000/type-facility');
   }
 }

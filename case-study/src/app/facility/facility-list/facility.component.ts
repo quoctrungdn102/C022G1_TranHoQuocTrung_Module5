@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 })
 export class FacilityComponent implements OnInit {
   facilities: any;
+  name: string;
 
 
   constructor(private facilityService: FacilityService, private router: Router) {
@@ -19,23 +20,52 @@ export class FacilityComponent implements OnInit {
   ngOnInit(): void {
     this.facilityService.getFacilityAll().subscribe(data => {
       this.facilities = data
-      console.log(this.facilities)
-
     });
   }
 
   id: number;
+  idFacility: string;
 
-  getId(id: number) {
+  getId(id: number, idbFactory: string) {
     this.id = id;
+    this.idFacility = idbFactory
   }
 
-  // delete(id: number) {
-  //   console.log(id)
-  //   this.facilityService.deleteFacility(id).subscribe();
-  //   // this.router.navigateByUrl('facilityList')
-  //   this.facilityService.getFacilityAll().subscribe(data => {
-  //     this.facilities = data
-  //   })
-  // }
+  delete(id: number) {
+    console.log(id)
+    this.facilityService.deleteFacility(id).subscribe();
+    this.facilityService.getFacilityAll().subscribe(data => {
+      this.facilities = data
+    })
+  }
+
+  getName() {
+
+    let arr: Facility[] = [];
+    this.facilities.forEach(temp => {
+      if (temp.nameFacility.includes(this.name)) {
+        arr.push(temp)
+      }
+    })
+    this.facilities = arr
+    console.log(this.facilities)
+  }
+
+  getString(value: String) {
+    this.facilityService.getFacilityAll().subscribe(data => {
+      this.facilities = data
+      this.name = value.toLocaleLowerCase();
+      let arr: Facility[] = [];
+      this.facilities.forEach(temp => {
+        if (temp.nameFacility.toLocaleLowerCase().includes(this.name)) {
+          arr.push(temp)
+        }
+      })
+      this.facilities = arr
+      console.log(this.facilities)
+
+    });
+
+    // console.log(this.name)
+  }
 }

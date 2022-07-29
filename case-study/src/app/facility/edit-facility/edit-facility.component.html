@@ -12,15 +12,14 @@
         formControlName="idFacility"
         type="text" class="form-control" id="inputEmail41" placeholder="Code">
     </div>
-    <div class="form-group ">
+    <div class="form-group " formGroupName="typeFacility">
       <label for="inputState">Loại dịch vụ</label>
       <select
-        formControlName="typeFacility"
+        formControlName="id"
 
         id="inputState" class="form-control">
-        <option>Vila</option>
-        <option>House</option>
-        <option>Room</option>
+        <option>chọn kiểu dịch </option>
+        <option *ngFor="let temp of typeFacility " value="{{temp.id}}">{{temp.nameTypeFacility}}</option>
       </select>
     </div>
     <div class="form-row">

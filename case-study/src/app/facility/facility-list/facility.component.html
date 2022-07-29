@@ -1,50 +1,82 @@
 <div class="container">
+  <h2>Tiềm kiếm sản phẩm </h2>
+  <div><input type="text" (input)="getString($event.target.value)"></div>
+<!--  <button (click)="getName()">Search</button>-->
 
-<!--  <button class="btn" (click)="getFacility()">List Facility</button>-->
-<div class="mt-5 table-responsive" style="margin-bottom: 200px">
-<table class="table">
-  <thead class="thead-dark ">
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Dịch vụ</th>
-    <th scope="col">Diện tích</th>
-    <th scope="col">Giá thuê</th>
-    <th scope="col">Số người</th>
-    <th scope="col">Kiểu thuê</th>
-    <th scope="col">Kiểu phòng</th>
-    <th scope="col">Dịch vụ khác</th>
-    <th scope="col">Hồ bơi</th>
-    <th scope="col">Số tầng</th>
-    <th scope="col">Dịch vụ miễn phí đi kèm</th>
-    <th colspan="2" scope="col">Action</th>
+  <!--  <button class="btn" (click)="getFacility()">List Facility</button>-->
+  <div class="mt-5 table-responsive" style="margin-bottom: 200px">
+    <table class="table">
+      <thead class="thead-dark ">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Mã dịch vụ</th>
+        <th scope="col">Dịch vụ</th>
+        <th scope="col">Diện tích</th>
+        <th scope="col">Giá thuê</th>
+        <th scope="col">Số người</th>
+        <th scope="col">Kiểu thuê</th>
+        <th scope="col">Kiểu phòng</th>
+        <th scope="col">Dịch vụ khác</th>
+        <th scope="col">Hồ bơi</th>
+        <th scope="col">Số tầng</th>
+        <th scope="col">Dịch vụ miễn phí đi kèm</th>
+        <th colspan="2" scope="col">Action</th>
 
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor=" let temp of facilities;let i = index">
-    <td>{{i+1}}</td>
-    <td>{{temp.nameFacility}}</td>
-    <td>{{temp.areaFacility}}</td>
-    <td>{{temp.costFacility}}</td>
-    <td>{{temp.peopleFacility}}</td>
-    <td>{{temp.typeFacility}}</td>
-    <td>{{temp.roomStandard}}</td>
-    <td>{{temp.other}}</td>
-    <td>{{temp.areaPool}}</td>
-    <td>{{temp.floor}}</td>
-    <td>{{temp.freeAttachService}}</td>
-    <td><a  routerLink="/edit-facility/{{temp.id}}"><button>Edit</button></a></td>
-<!--    <td><a  routerLink="/delete-facility/{{temp.id}}"><button>Delete</button></a></td>-->
-    <td>  <button type="button"  data-toggle="modal" data-target="#exampleModal" (click)="getId(temp.id)">
-    delete
-    </button></td>
-  </tr>
-  </tbody>
-</table>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor=" let temp of facilities;let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{temp.idFacility}}</td>
+        <td>{{temp.nameFacility}}</td>
+        <td>{{temp.areaFacility}}</td>
+        <td>{{temp.costFacility}}</td>
+        <td>{{temp.peopleFacility}}</td>
+        <td>{{temp.typeFacility.nameTypeFacility}}</td>
+        <td>{{temp.roomStandard}}</td>
+        <td>{{temp.other}}</td>
+        <td>{{temp.areaPool}}</td>
+        <td>{{temp.floor}}</td>
+        <td>{{temp.freeAttachService}}</td>
+        <td><a routerLink="/edit-facility/{{temp.id}}">
+          <button>Edit</button>
+        </a></td>
+        <!--    <td><a  routerLink="/delete-facility/{{temp.id}}"><button>Delete</button></a></td>-->
+        <td>
+          <button type="button" data-toggle="modal" data-target="#exampleModal"
+                  (click)="getId(temp.id,temp.idFacility)">
+            delete
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>
 
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="display: none">{{id}}</p>
+        <p>Bạn có muốn xóa dịch vụ {{idFacility}} không ?????</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete(id)">Yes</button>
+      </div>
+    </div>
+  </div>
 </div>
-<app-delete-facility [id]="id"></app-delete-facility>
 
 
 
