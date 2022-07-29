@@ -37,6 +37,7 @@
         <td>{{temp.gioKhoiHanh}}</td>
         <td>{{temp.nhaXe.tenNhaXe}}</td>
         <td>{{temp.soLuong}}</td>
+        <td><a routerLink="/editVeXe/{{temp.id}}"><button>Sửa</button></a></td>
         <td>
           <button type="button" data-toggle="modal" data-target="#exampleModal"
                   (click)="getId(temp.id,temp.diemDi,temp.diemDen,temp.gioKhoiHanh,temp.ngayKhoiHanh)">

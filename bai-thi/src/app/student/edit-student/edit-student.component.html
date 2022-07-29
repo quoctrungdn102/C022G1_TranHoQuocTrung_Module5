@@ -1,34 +1,96 @@
 <div class="container mt-5">
-  <h2>Thêm mới học sinh</h2>
+  <h2>Sửa vé xe</h2>
 
-  <form [formGroup]="formCreateStudent" (ngSubmit)="onSubmit()">
+  <form [formGroup]="themVeXe" (ngSubmit)="onSubmit()">
     <div class="row">
-      <div class="form-group col-md-8">
-        <label for="inputEmail41">Tên Học Sinh</label>
+      <div class="form-group col-md-4">
+        <label for="inputEmail41"> Điểm đi</label>
         <input
-          formControlName="nameStudent"
-          type="text" class="form-control" id="inputEmail41" placeholder="Trần Văn A">
-        <!--        <div class="text-danger" *ngIf="contractForm.controls.idFacility.hasError('required')">* Không đưuọc để trống</div>-->
+          formControlName="diemDi"
+          type="text" class="form-control" id="inputEmail41" >
+        <div class="text-danger"
+             *ngIf="themVeXe.controls.diemDi.hasError('required') && themVeXe.controls.diemDi.touched">
+          Không được để trống
+        </div>
       </div>
-      <div class="form-group col-md-4 " formGroupName="class">
-        <label for="inputState">Lớp</label>
+      <div class="form-group col-md-4">
+        <label for="inputEmail411"> Điểm đến</label>
+        <input
+          formControlName="diemDen"
+          type="text" class="form-control" id="inputEmail411" >
+        <div class="text-danger"
+             *ngIf="themVeXe.controls.diemDen.hasError('required') && themVeXe.controls.diemDen.touched">
+          Không đưuọc để trống
+        </div>
+      </div>
+      <div class="form-group col-md-4 " formGroupName="nhaXe">
+        <label for="inputState">Nhà xe</label>
         <select
           formControlName="id"
 
           id="inputState" class="form-control">
-          <option value="">--Chon lớp--</option>
-          <option  *ngFor="let temp of listClass" value="{{temp.id}}">{{temp.nameClass}}</option>
+          <option value="" selected>--Chon nhà xe--</option>
+          <option *ngFor="let temp of listClass " value="{{temp.id}}">{{temp.tenNhaXe}}</option>
         </select>
+<!--        <div class="text-danger"-->
+<!--             *ngIf="themVeXe.controls.nhaXe.controls.id.hasError('required') && themVeXe.controls.nhaXe.controls.id.touched">-->
+<!--          Không được để trống-->
+<!--        </div>-->
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail412">Ngày Khởi Hành</label>
+        <input
+          formControlName="ngayKhoiHanh"
+          type="date" class="form-control" id="inputEmail412" >
+        <div class="text-danger"
+             *ngIf="themVeXe.controls.ngayKhoiHanh.hasError('required') && themVeXe.controls.ngayKhoiHanh.touched">
+          Không được để trống
+        </div>
+        <div class="text-danger"
+             *ngIf="themVeXe.controls.ngayKhoiHanh.hasError('date') && themVeXe.controls.ngayKhoiHanh.dirty">
+          Ngày khởi hành phải sau ngày hiện tại 1 ngày
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Giờ Khởi Hành</label>
+        <input
+          formControlName="gioKhoiHanh"
+          type="text" class="form-control" id="inputEmail4" >
+        <div class="text-danger"
+             *ngIf="themVeXe.controls.gioKhoiHanh.hasError('required') && themVeXe.controls.gioKhoiHanh.touched">
+          Không được để trống
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4122">Số lượng</label>
+        <input
+          formControlName="soLuong"
+          type="number" class="form-control" id="inputEmail4122" >
+        <div class="text-danger"
+             *ngIf="themVeXe.controls.soLuong.hasError('required') && themVeXe.controls.soLuong.touched">
+          Không đưuọc để trống
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail43">Giá vé</label>
+        <input
+          formControlName="giaVe"
+          type="number" class="form-control" id="inputEmail43" >
+        <div class="text-danger"
+             *ngIf="themVeXe.controls.giaVe.hasError('required') && themVeXe.controls.giaVe.touched">
+          Không được để trống
+        </div>
       </div>
     </div>
 
 
-
-    <button  style="float: left" type="submit" class="btn btn-primary mr-4">Save</button>
-    <!--    <button [disabled]="contractForm.invalid" style="float: left" type="submit" class="btn btn-primary mr-4">Save</button>-->
+    <button style="float: left" type="button" class="btn btn-primary mr-4" (click)="comback()"> Quay lại</button>
+    <button [disabled]="themVeXe.invalid" style="float: left" type="submit" class="btn btn-primary mr-4">Sửa </button>
   </form>
-
-
 
 
 </div>

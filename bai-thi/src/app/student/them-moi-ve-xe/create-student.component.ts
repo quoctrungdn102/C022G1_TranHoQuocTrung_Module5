@@ -22,7 +22,9 @@ export class CreateStudentComponent implements OnInit {
     diemDen: new FormControl('', Validators.required),
     ngayKhoiHanh: new FormControl('', [Validators.required, this.checkDate]),
     gioKhoiHanh: new FormControl('', Validators.required),
-    nhaXe: new FormControl('', Validators.required),
+    nhaXe: new FormGroup({
+      id: new FormControl('', Validators.required)
+    }),
     soLuong: new FormControl('', Validators.required),
   });
 

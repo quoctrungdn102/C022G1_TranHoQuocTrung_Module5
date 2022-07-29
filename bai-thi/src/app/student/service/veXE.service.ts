@@ -24,7 +24,7 @@ export class VeXEService {
   }
 
   createStudent(veXe): Observable<VeXe> {
-    return this.http.post<VeXe>('http://localhost:3000/veXE', veXe);
+    return this.http.post<VeXe>('http://localhost:8080/restControllerProduct/themVeXe', veXe);
   }
 
   suaVeXe(id: number, student): Observable<VeXe> {
@@ -32,7 +32,7 @@ export class VeXEService {
   }
 
   tiemKiemVeXe(id: number): Observable<VeXe> {
-    return this.http.get<VeXe>('http://localhost:3000/veXE/' + id);
+    return this.http.get<VeXe>('http://localhost:8080/restControllerProduct/timVeXe/' + id);
   }
 
   tiemKiemDiemDi(name: string): Observable<VeXe> {
